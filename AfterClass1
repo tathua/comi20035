@@ -1,0 +1,34 @@
+// ---- MOSTRAR MJES ----
+      console.log("Nuestro primer afterclass") //Solo lo ve quien codea
+      alert("Bienvenidos")//Mensaje de alerta
+      prompt('Ingrese su nombre')//Interacción con el usuario
+    
+      // ----- VARIABLES ----
+      let nombre = "" //Cadena de caracteres - STRING
+      let edad = 23 //INT / Float / Double
+      let condicion = true //Boolean
+      let usuario_Uno //CamelCase 
+      
+
+      // ----- GUARDAR INFO EN VARIABLES ----
+    let nombreUsuario = prompt("Ingrese su nombre")
+    console.log("El nombre ingresado es: " + nombreUsuario)
+    alert("Bienvenido/a " + nombreUsuario)
+
+
+    
+        //----- Ejercicio CARNET-------
+    //Datos: Nombre - DNI - Ciudad - Fecha de Nac - Categoría - 
+    //Districto - Fecha de venc. - Sexo - 
+        alert("Te vamos a pedir tu datos")
+        let nombre = prompt("Ingrese su nombre")
+        let DNI = prompt("Ingrese su dni")
+        let Ciudad = prompt("Ingrese su ciudad")
+        let fechaNac = prompt("Ingrese su fecha de nacimiento")
+        let Categoría = prompt("Ingrese su categoría")
+        let Sexo = prompt("Ingrese su sexo")
+
+        //console.log(nombre + DNI + Ciudad + fechaNac + Categoría + Sexo)
+        let datos = nombre + " - " + DNI +" - "+ Ciudad +" - "+ fechaNac +" - "+ Categoría +" - "+ Sexo
+        console.log(datos)
+        alert(datos)
