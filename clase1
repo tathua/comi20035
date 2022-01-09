@@ -1,0 +1,33 @@
+//Crear variables mutables: LET 
+let num1 = 10
+let num2 = 20
+
+//Operaciones con variables
+let suma = num1 + num2
+let resta = num1 - num2
+let division = num1 / num2
+let multiplicacion = num1 * num2
+console.log(suma)
+
+//Crear variables inmutables: CONST
+const nombre = "Natalia "
+const apellido = "Sal"
+
+//Concatenar texto (Agregar espacios)
+let datosCompletos = nombre + apellido
+console.log(datosCompletos) 
+
+//Mensaje en consola (Solo lo ve el creador): CONSOLE.LOG
+console.log("Bienvenidos a nuestra app web") 
+
+
+//Mensaje de alerta en nuestra página: ALERT
+alert("Bienvenidos a nuestra app web") 
+
+//Pedir información al usuario: PROMPT
+alert("Bienvenidos a nuestra app web")
+
+//Guarda info de PROMPT en variables y crear mensaje
+let nombreUsuario = prompt("Ingrese el nombre de usuario") //Guarda el valor en una variable
+alert("Bienvenido/a "+ nombreUsuario)
+console.log(nombreUsuario)
