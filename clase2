@@ -1,0 +1,45 @@
+// parseInt 
+        let entero = prompt("Ingrese un número")
+        alert (entero + 5) 
+        entero = parseInt(entero)//cambia sring a entero
+        alert (entero + 5) 
+        // parseFloat
+        entero = parseFloat(entero)//cambia sring a decimal
+        alert (entero + 5) 
+
+        // IF ... ELSE
+        let num = 10
+        if (num > 10) { //si ....
+            console.log("Tu número es mayor a 10")
+        }
+        else{ //sino...
+            console.log("Tu número es menor a 10")
+        }   
+
+        //Operadores de comparación
+        //> < >= <= == !=
+
+
+        // IF anidado
+        let num = 10
+        if (num > 10) { //si ....
+            console.log("Tu número es mayor a 10")
+        }
+        else if (num < 10){ //If anidado
+            console.log("Tu núm es menor a 10")
+        }else{
+            console.log("Tu núm es igual 10")
+        }
+
+
+       
+        let usuario = "usuario1"
+        let contra = "A123"
+        let nombreUsuario = prompt("Ingrese el usuario")
+        let contraUsuario = prompt("Ingrese su contraseña")
+
+        if((nombreUsuario == usuario) || (contraUsuario == contra)){
+            alert("Bienvenido/a")
+        }else{
+            alert("Alguno de sus datos es incorrecto")
+        }
