@@ -1,0 +1,85 @@
+//WHILE simple e infinito
+let mje = true
+while(mje){
+    alert("Hola")
+}
+
+//While (Con tope para que no sea infinito)
+let nombre = prompt("Ingrese su nombre") //pide un dato
+while(nombre != "Luis"){ //Primero evalúa
+    alert("Hola" +nombre) //ejecuta
+}
+
+//DO..WHILE
+let nombre = prompt("Ingrese su nombre")//pide un dato
+do {
+alert("Hola" +nombre) //ejecuta (SI o SI, se ejecuta una vez)
+nombre=prompt("Ingrese otro nombre")
+
+}while(nombre != "Luis")//evalúa
+
+
+//ACTIVIDAD 1 : Un prog que muestre todos los números del 1 al 10
+let num = 1 //desde
+while(num <=10){ //hasta
+    alert(num)
+    
+    num ++ //Incrementa o decrementa (--) de a 1 
+    num = num +1 //Incrementa de 1 o más
+    num + =1 //Incrementa de 1 o más
+
+}
+alert("El número es mayor a 10")
+
+
+
+
+//FOR (Con variable inicializada al principio)
+let x=0 //inicia la variable antes
+for(x; x < 10;x++)
+
+//FOR (Con variable inicializada dentro)
+
+for (let i = 0; i < 10; i++){ // inicia e iguala en 0; indica el tope; indica incremento
+    alert("i vale =" +i) //Instrucciones
+}
+
+
+//ACTIVIDAD 2: Tabla de multiplicar
+
+let dato = parseInt(prompt("Ingrese un número"))
+for(let num=1 ; num<=10 ; num++){
+    if(num==5){ //Saltea el número 5, y continúa con el resto
+        continue
+    }
+    if(num==6){ //Corta en el número 5, sin importar que sigue después
+        break
+    }*
+    let resultado = dato * num
+    alert(dato + "X" + num +"=" + resultado)
+}
+
+
+toLowerCase() //Pasa texto a minúscula
+toUpperCase() //Pasa texto a mayúcula
+
+
+//SWICTH
+let dia = prompt("Ingrese un día").toLowerCase() //Pide dato
+switch (dia) { //Inicia swicth con el dato pedido y lo compara a cada uno de los que sigue
+    case "lunes":
+        alert("Andá a trabajar")
+        break; //Corta instrucción si es correcta, en caso contrario, continúa
+    case "martes":
+        alert("Andá a trabajar")
+        break; 
+    case "miércoles":
+        alert("Andá a trabajar")
+        break; 
+    default: //Mensaje último por si ninguna condición se cumple
+        alert("Hoy no trabajas")
+        break;
+}
+
+
+
