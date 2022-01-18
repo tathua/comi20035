@@ -1,0 +1,45 @@
+function Saludar (){
+    alert("Bienvenidos/as") //Declara función
+}
+
+Saludar(); //llama función
+Saludar();
+
+//Función simple
+function suma (){
+    let num1 = 10;
+    let num2 = 20;
+    let resultado = num1 + num2
+    alert("Tu suma es" + resultado)
+}
+
+suma(); 
+suma();
+suma(); //Devuelve el mismo valor en los tres llamados
+let valorSuma = resultado //NO
+let valorSuma2 = suma(23 , 230) // NO
+
+//Función con parámetros
+function resta (n1 , n2 ){
+    let result = n1 - n2
+    alert("Tu resta es" + result)
+}
+
+resta (30 , 10)
+resta (320 , 210)
+resta (30 , 100)
+resta (301 , 110)
+let ValorResta2 = resta (50 , 80)
+
+//return
+function resta (n1 ,n2){
+    return n1 - n2
+}
+
+let restult = resta (100 , 50)
+let restult2 = resta (10 , 500)
+let restult3 = resta (1300 , 5)
+
+alert(restult + restult2 + restult3)
+
+let valorResta = resta (100 , 1000)
