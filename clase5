@@ -1,0 +1,130 @@
+//   ------------------OBJETOS---------------(Características)
+//Hacer esto: (datos relacionados entre sí, pero sueltos)
+let nombre = "Homero";
+let edad   = 39;
+let calle  = "Av. Siempreviva 742";
+
+//Es igual a esto:
+const persona1 = { nombre: "Homero", edad: 39, calle: "Av. Siempreviva 742" }
+
+//o esto:
+const persona2 = { 
+    nombre: "lisa", 
+    edad: 8, 
+    calle: "Av. Siempreviva 742" 
+}
+
+
+//mostrar
+alert(persona1.nombre)
+alert(persona2["nombre"])
+
+
+
+
+//asignar
+persona1.nombre = "Marge"
+alert(persona1.nombre)
+
+//asignar con info de usuario
+persona1.nombre = prompt("Ingrese un nombre")
+alert(persona1.nombre)
+
+
+
+
+//   ------------------OBJETOS CONSTRUCTORES---------------
+
+function Persona(nombre, edad, calle) { // le da nombre a una fnc, parámetros y su estructura
+    this.nombre = nombre;
+    this.edad 	 = edad;
+    this.calle  = calle;
+}
+
+
+const persona3 = new Persona("Homero", 39, "Av. Siempreviva 742"); //Completa los datos de la función
+const persona4 = new Persona("Marge", 36, "Av. Siempreviva 742");
+alert(persona1.nombre) //se puede mostrar un dato puntual
+
+
+
+
+
+//new = Permite generar nuevos objetos / personas
+//this = Permite asociar el objeto con el dato
+
+
+//-----Ejercicio----
+//Generar un objeto utilizando 3 datos de nuestras máscotas (Características)
+
+
+
+//FUNCIONES & MÉTODOS (Acciones)
+
+function Persona(nombre, edad, calle) {
+    this.nombre = nombre;
+    this.edad   = edad;
+    this.calle  = calle;
+    this.hablar = function(){ console.log("HOLA SOY "+ this.nombre + "tengo " + this.edad + "años")} //Acción
+}
+const persona10 = new Persona("Homero", 39, "Av. Siempreviva 742");
+const persona11 = new Persona("Marge", 36, "Av. Siempreviva 742");
+persona1.hablar();
+persona2.hablar();
+
+
+
+//IN - FOR..IN
+
+const persona1 = { nombre: "Homero", edad: 39, calle: "Av. Siempreviva 742"};
+
+//devuelve true porque la clave "nombre" existe en el objeto persona1
+console.log( "nombre" in persona1); //true
+
+//devuelve false porque la clave "origen" no existe en el objeto persona1
+console.log( "origen" in persona1); //false
+
+//recorremos todas las propiedades del objeto con el ciclo for...in (Muestra 1x1)
+for (const propiedad in persona1) {
+    console.log(persona1[propiedad]);
+    alert(persona1[propiedad]);
+}
+
+
+
+//  -----------------------CLASES-----------------------
+
+
+class Persona{ //similar a una función
+    constructor(nombre, edad, calle) { //El constructor tiene parámetros
+        this.nombre = nombre;
+        this.edad   = edad;
+        this.calle  = calle;
+    }
+}
+const persona1 = new Persona("Homero", 39, "Av. Siempreviva 742");
+
+
+function Persona(nombre, edad, calle) {
+    this.nombre = nombre;
+    this.edad   = edad;
+    this.calle  = calle;
+    
+}
+
+
+//Clases y métodos
+class Persona{
+    constructor(nombre, edad, calle) {
+        this.nombre = nombre;
+        this.edad   = edad;
+        this.calle  = calle;
+    }
+    hablar(){
+        console.log("HOLA SOY "+ this.nombre);
+    }
+}
+const persona1 = new Persona("Bart", 39, "Av. Siempreviva 742");
+persona1.hablar(); //Consola
+
+
