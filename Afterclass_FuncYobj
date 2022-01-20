@@ -1,0 +1,122 @@
+//FUNCIÓN SIMPLE
+let nombre = "Elena"
+function mensaje (){
+    
+    alert("Usted está en el afterclass. Hola " +nombre )
+    
+}
+
+function mensaje2 (){
+    alert("Hola " + nombre)
+}
+
+
+mensaje();
+mensaje2();
+mensaje();
+mensaje2();
+
+//FUNCIONES CON PARAMETROS
+
+
+function saludo (nombre , apellido){
+    
+alert("Bienvenido " + nombre + " " + apellido)
+
+}
+
+saludo("Mathias" , "Peréz")
+mensaje();
+saludo("Luis" , "Peréz")
+mensaje(); 
+
+function interes (precio , IVA){
+
+let resultado = precio * IVA
+alert("El precio con IVA es: " + resultado)
+
+}
+
+
+interes(23 , 1.21)
+interes(368 , 1.21)
+interes(456 , 1.21)
+
+//OBJETOS
+
+
+const animales = { 
+    cantPatas: 4,
+    tipo: "perro",
+    raza: "Boxer",
+}
+
+alert(animales.tipo)
+
+let animal = { 
+    cantPatas: prompt("ingrese cant de patas"),
+    tipo: "perro",
+    raza: "Boxer",
+}
+
+alert(animal.raza)
+alert(animal.cantPatas)
+
+//Objetos constructores
+
+function Animales (cantPatas, tipo , raza){
+    this.cantPatas = cantPatas;
+    this.tipo = tipo;
+    this.raza = raza;
+}
+
+let animalito = new Animales (prompt("ingrese cant de patas"), "perro", "boxer")
+alert(animalito.cantPatas)
+
+function Usuario(nombreUsuario, Contra , edad){
+    this.nombreUsuario = nombreUsuario;
+    this.contra = Contra;
+    this.edad = edad;
+}
+
+let usuario1 = new Usuario (prompt("Ingrese su usuario"), prompt("Ingrese su contra"), prompt("Ingrese su edad"))
+let usuario2 = new Usuario (prompt("Ingrese su contra"), prompt("Ingrese su edad"))
+alert(usuario2.edad)
+
+console.log("nombreUsuario" in usuario1) //true
+console.log("nombreUsuario" in usuario2) //false
+
+for (const data in usuario1){
+    alert(usuario1[data])
+}
+
+
+//CLASE
+class User{ //similar a una función
+    constructor(nombre, edad, contra) { //El constructor tiene parámetros
+        this.nombre = nombre;
+        this.edad   = edad;
+        this.contra  = contra;
+    }
+}
+const usu1 = new User("Homero", 39, "a12");
+
+alert("nombre" in usu1)
+
+//Clases y métodos
+class User2{
+    constructor(nombre, edad, contra) {
+        this.nombre = nombre;
+        this.edad   = edad;
+        this.contra  = contra;
+    }
+    hablar(){
+        console.log("Hola soy el usuario  "+ this.nombre );
+    }
+    Edad(){
+        console.log("Mi edad es "+ this.edad );
+    }
+}
+const usu2 = new User2("Bart", 39, "b32");
+usu2.hablar(); //Consola
+usu2.Edad()
