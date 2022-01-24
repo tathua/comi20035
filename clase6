@@ -1,0 +1,213 @@
+//Declarar usuarios:
+var nombre1 = "usuario1"
+var nombre2 = "usuario2"
+var nombre3 = "usuario3"
+var nombre4 = "usuario4"
+var nombre5 = "usuario5"
+var nombre6 = "usuario6"
+var nombre7 = "usuario7"
+var nombre8 = "usuario8"
+var nombre9 = "usuario9"
+var nombre10 = "usuario10"
+
+
+//¿Qué tienen en común? (Son un mismo tipo de dato, y se pueden agrupar)
+
+
+let nombres = ["usuario1","usuario2","usuario3","usuario4","usuario5","usuario6","usuario7","usuario8","usuario9","usuario10"]
+
+
+// ...............0....1....2....3...4
+const miArray = [12 , 21 , 34 , 54 , 65]
+
+
+
+
+
+//Crear array de cero sin datos iniciales
+
+
+
+let datos2 = [ "nombre" , "edad" , "altura"]
+let datos = [];
+datos[0] = "Pepe";
+datos[1] = 21
+datos[2] = prompt("Ingrese la altura");
+datos[3] = "verde"
+datos[4] = 50
+
+
+
+//Acceder
+
+
+alert(datos[0])
+alert(datos[3])
+
+
+//Modificar un dato
+alert(datos[1])
+datos[1] = 30
+alert(datos[1])
+
+//Hacer operaciones 
+
+let suma = datos[1] + datos[4]
+alert(suma)
+
+//Guardar en variables
+
+datos[0] = "Emi"
+let nombre = datos[0]
+alert(nombre)
+
+datos[0] = "Luis"
+
+
+
+
+
+
+
+
+
+
+
+//Recorrer
+for (let i = 0; i < miArray.length; i++) {
+    alert(miArray[i]);
+    alert("El número es " + miArray[i])
+}
+
+
+
+
+
+//¿Porqué aparece undefined al finalizar el for?
+
+
+
+//const miArray = [12 , 21 , 34 , 54 , 54, 0 ]
+
+
+//Obtener el largo de un array (.lenght)
+
+
+
+//alert(miArray.length)
+
+
+//Agregar datos al final, sin saber índice (.push)
+
+
+miArray.push(10)
+alert(miArray.length)
+alert(miArray[6])
+
+
+//Agregar datos al principio (.unshift)
+
+//miArray[0] = 100 ¡NO!
+miArray.unshift(100)
+alert(miArray.length)
+alert(miArray[0])
+
+
+
+
+//Eliminar el primer elemento del array(.shift())
+const miArray = [12 , 21 , 34 , 54 , 54, 0 ]
+miArray.shift()
+alert(miArray.length)
+alert(miArray[0])
+
+
+
+
+
+
+
+
+//Eliminar el último elemento del array(.pop())
+miArray.pop()
+alert(miArray.length)
+
+
+
+//Sacar varios datos del array con otro índice que no sea primero o último (.splice(... , ...))
+const miArray = [12 , 21 , 34 , 54 , 54, 0 ]
+
+miArray.splice(2,1)
+
+
+
+//Mostrar todos los elementos, sperados por un valor (.join(","))
+
+alert(miArray.join(","))
+alert(miArray.join("-"))
+
+
+
+
+
+
+
+
+
+//Combinar dos arrays en uno(  primerArray.concat(segundoArray) )
+const perros   = ["Pupy", "Ronnie"]
+const gatos = ["Mishi", "Garfield", "Zuri"]
+const mascotas = perros.concat(gatos)
+alert(mascotas)
+
+
+//Copiar parte de un array en uno nuevo (.slice(... , ...))
+const nombres    = ['Rita', 'Pedro', 'Miguel', 'Ana', 'Vanesa'];
+const masculinos = nombres.slice(1, 3)
+
+//Saber el índice de un elemento (.indexOf() )
+
+const gatos = ["Mishi", "Garfield", "Zuri"]
+alert(gatos.indexOf("Mishi")) //0
+alert(gatos.indexOf("Pupy")) //-1*/
+
+
+//Saber si un dato existe en el array(.includes() )
+
+//Devolver el array invertido (.reverse() )
+
+
+
+//Ejercicios:
+
+//Declaraciòn de array vacío y variable para determinar cantidad
+const listaNombres = [];
+let   cantidad     = 5;
+//Empleo de do...while para cargar nombres en el array por prompt()
+do{
+   let entrada = prompt("Ingresar nombre");
+   listaNombres.push(entrada.toUpperCase());
+   console.log(listaNombres.length);
+}while(listaNombres.length != cantidad)
+//Concatenamos un nuevo array de dos elementos
+const nuevaLista = listaNombres.concat(["ANA","EMA"]);
+//Salida con salto de línea usando join
+alert(nuevaLista.join("\n"));
+
+//---------
+
+const nombres = ['Rita', 'Pedro', 'Miguel', 'Ana', 'Vanesa']
+
+// recibo el elemento a borrar por parámetro
+const eliminar = (nombre) => {
+    // busco su índice en el array
+    let index = nombres.indexOf(nombre)
+
+     // si existe, o sea es distinto a -1, lo borro con splice
+    if (index != -1 ) {
+        nombres.splice(index, 1)
+    } 
+}
+
+eliminar('Pedro')
+
