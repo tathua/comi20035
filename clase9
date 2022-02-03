@@ -1,0 +1,124 @@
+//Como se compone
+
+let boton = document.getElementById("btnPrincipal")
+      boton.addEventListener("click", respuestaClick) //evento que llama a una función
+      function respuestaClick(){
+        console.log("Respuesta evento")
+      }
+
+
+
+
+let boton2 = document.getElementById("btnPrincipal2")
+      boton2.onclick = () =>{console.log("Respuesta 2")}
+
+
+
+
+//ACT - Escribir nombre y contraseña, validarlo con el botón y mostrarlo en la página.
+
+
+let botonclick = document.getElementById("ingresar")
+      botonclick.addEventListener("click", respuesta)
+      /*
+      function respuesta (){
+          let usuario = document.getElementById("usuario").value
+          let contra = document.getElementById("contrasenia").value
+          let valores = document.createElement("p")
+          valores.innerHTML = "<h2>los valores obtenidos son </h2>" +usuario + " y " +contra
+          document.body.appendChild(valores)
+      }
+*/
+      function respuesta (){
+        let usuario = document.getElementById("usuario").value
+        let contra = document.getElementById("contrasenia").value
+        let valores = document.getElementById("texto")
+        valores.innerHTML = 
+        `
+            <h2>${usuario}</h2>
+            <h2>${contra}</h2>
+        `
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// EVENTOS DEL MOUSE
+
+let boton3 = document.getElementById("btnMain")
+boton3.onclick = () => {console.log("Click")}
+boton3.onmousemove = () => {console.log("Move")}
+
+
+
+//EVENTOS DEL TECLADO
+/*
+let input1 = document.getElementById("nombre")
+let input2 = document.getElementById("edad")
+input1.onkeyup = () => {console.log("ingresó una letra")}
+input2.onkeydown = () => {console.log("keyDown")}
+*/
+
+
+
+
+// EVENTO CHANGE
+/*
+let input1  = document.getElementById("nombre");
+let input2  = document.getElementById("edad");
+input1.onchange = () => {console.log("valor1")};
+input2.onchange = () => {console.log("valor2")};
+*/
+
+//EVENTO INPUT
+
+let input1  = document.getElementById("nombre")
+input1.addEventListener('input', () => {
+     console.log(input1.value)
+})
+
+
+//EVENTO SUBMIT
+
+let miFormulario      = document.getElementById("formulario");
+miFormulario.addEventListener("submit", validarFormulario);
+
+function validarFormulario(e){
+    e.preventDefault();
+    console.log("Formulario Enviado");    
+}
+
+
+
+
+// ---- EJEMPLO
+
+let miFormulario      = document.getElementById("formulario");
+miFormulario.addEventListener("submit", validarFormulario);
+
+function validarFormulario(e){
+    //Cancelamos el comportamiento del evento
+    e.preventDefault();
+    //Obtenemos el elemento desde el cual se disparó el evento
+    let formulario = e.target //es una referencia al objeto en el cual se lanzo el evento.
+    //Obtengo el valor del primero hijo <input type="text">
+    console.log(formulario.children[0].value); 
+    //Obtengo el valor del segundo hijo <input type="number"> 
+    console.log(formulario.children[1].value);  
+}
