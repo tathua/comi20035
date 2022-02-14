@@ -1,0 +1,231 @@
+// --------- SHOW
+/*
+//Agregemos <h3> con jQuery ocultos con  style="display: none;"
+$("body").prepend('<h3  style="display: none" >¡Hola Coder1!</h3>');
+$("body").prepend('<h3  style="display: none" >¡Hola Coder2!</h3>');
+//Mostramos con show() todos los <h3>
+$("h3").show(); 
+*/
+
+
+
+
+
+
+/*
+
+// --------- HIDE
+//Agregamos <h3> con jQuery
+$("body").prepend('<h3>¡Hola Coder3!</h3>');
+$("body").prepend('<h3>¡Hola Coder4!</h3>');
+//Ocultamos con hide() todos los <h3>
+$("h3").hide(); 
+*/
+
+
+/*
+// ---- FADE IN (Parámetros con " ")
+
+//Agreguemos <h3> con jQuery ocultos con  style="display: none;"
+$("body").prepend('<h3  style="display: none" >¡Hola Coder1!</h3>');
+$("body").prepend('<h3  style="display: none" >¡Hola Coder2!</h3>');
+//Mostramos con fadeIn() todos los <h3>
+$("h3").fadeIn();
+
+*/
+
+/*
+// ---- FADE OUT (Parámetros con " ")
+
+//Agregemos <h3> con jQuery"
+$("body").prepend('<h3>¡Hola Coder1!</h3>');
+$("body").prepend('<h3>¡Hola Coder2!</h3>');
+//Ocultamos con fadeOut() todos los <h3>
+$("h3").fadeOut("fast"); 
+*/
+
+/*
+// --- CALLBACK DEL FADE CON FUNCIÓN
+
+//Agregamos <h3> con jQuery
+$("body").prepend('<h3>¡Hola Coder1!</h3>');
+//Ocultamos con fadeOut() todos los <h3>
+$("h3").fadeOut("slow", function(){
+    //Cuando termina de ocultarse el elemento lo mostramos nuevamente
+    $("h3").fadeIn(1000);
+}); 
+
+*/
+
+
+
+
+// ------ SLIDEDOWN
+
+
+//OCULTAR
+/*
+//Agregamos un botón y un div con jQuery
+$("body").prepend('<button id="btn1">Ocultar</button>');
+$("body").prepend(`<div id="div1" style="height: 120px">
+                        <h3>¡Hola Coder!</h3>
+                        <h4>Sorpresa 1</h4>
+                    </div>`);
+//Usamos slideUp sobre div1 en respuesta al click del boton btn1
+$("#btn1").click(() => { 
+    $("#div1").slideUp("fast");
+});
+
+*/
+
+
+
+
+//MOSTRAR 
+/*
+//Agregamos un botón y un div con jQuery
+$("body").prepend('<button id="btn1">Mostrar</button>');
+$("body").prepend(`<div id="div1" style="height: 120px">
+                        <h3>¡Hola Coder!</h3>
+                        <h4>Sorpresa 2</h4>
+                    </div>`);
+//Usamos slideDown sobre div1 en respuesta al click del boton btn1
+$("#btn1").click(() => { 
+    $("#div1").slideDown("fast");
+});
+
+//Agregamos <h3> con jQuery
+//Agregamos <h3> con jQuery
+
+*/
+
+
+
+// -----SLIDE TOOGLE (2 en 1)
+/*
+//Agregamos un botón y un div con jQuery
+$("body").prepend('<button id="btn1">Mostrar</button>');
+$("body").prepend(`<div id="div1" style="height: 120px">
+                        <h3>¡Hola Coder!</h3>
+                        <h4>Sorpresa</h4>
+                    </div>`);
+//Usamos toggle sobre div1 en respuesta al click del botòn btn1
+$("#btn1").click(() => { 
+    $("#div1").toggle("fast");
+});
+
+
+*/
+
+
+
+
+
+// -------------MODIFICAR CSS CON JQUERY -------------
+/*
+//Agregamos un parrafo con jQuery
+$("body").prepend('<p class="titulo">Code House</p>');
+//Modificamos las reglas CSS desde jQuery
+$("p").css("background-color", "yellow");
+$("p").css("width", "50%");
+$(".titulo").css({  "color": "#ccc", 
+                    "font-size": "40px", 
+                    "borderLeft": "5px solid #ccc" });
+
+*/
+
+
+
+// ---- ANIMACIÓN
+/*
+//Agregamos un parrafo con jQuery
+$("body").prepend('<p class="titulo">Code House</p>');
+//Animamos sus propiedades CSS con animate
+$(".titulo").animate({  left:'250px',
+                        opacity:'0.5',
+                        height:'150px',
+                        width:'150px'   }, //1er parámetro propiedades
+                        "slow",            //2do parámetro duración 
+                        function(){        //3er parámetro callback
+                            console.log("final de animación");
+                        });
+
+*/
+
+
+
+// ----- EJEMPLO (Click -> scroll)
+/*
+//Agregamos una estructura con jQuery
+$("body").prepend(`</div>
+                        <a>Ir a contacto</a>
+                        <p style="height: 800px"></p>
+                        <section id="seccionContacto">
+                           <h4>¡Somos Coders!</h4>
+                        </section>
+                   </div>`);
+// Asociamos la animación al click en un elemento <a>
+$('a').click( function(e) { 
+    e.preventDefault();
+    //Animamos sus propiedades CSS con animate
+    $('html, body').animate({
+        scrollTop: $("#seccionContacto").offset().top  
+    }, 2000);
+} );
+*/
+
+
+
+// ENCADENAR ANIMACIONES
+/*
+//Agreguemos un párrafo con jQuery
+$("body").prepend('<p id="p1">Coder House</p>');
+//Declaración de métodos encadenados
+$("#p1").css("color", "red")
+        .slideUp(2000)
+        .slideDown(2000);
+
+
+
+
+//MÉTODO DELAY
+
+//Agregamos un párrafo con jQuery
+$("body").prepend('<p id="p1">Coder House</p>');
+//Declaración de métodos encadenados
+$("#p1").css("color", "red")
+        .slideUp(2000)
+        .delay(2000)
+        .slideDown(2000);
+
+*/
+
+
+
+// -----ejemplo
+// Array de objetos para agregar información al DOM.
+const productos = [{ id: 1,  nombre: "Arroz", precio: 125 },
+{  id: 2,  nombre: "Fideo", precio: 70 },
+{  id: 3,  nombre: "Pan"  , precio: 50},
+{  id: 4,  nombre: "Flan" , precio: 100}];
+// Asociamos el evento click en ready luego del DOM Generado
+$(document).ready(function () {
+    $(".btnComprar").click(function (e) { 
+        //Obtenemos hijos del padre <div> desde el target
+        let hijos = $(e.target).parent().children();
+        //Primer input, valor de ID oculto
+        console.log(hijos[0].value);
+        //Animaciòn de respuesta de compra
+        $(e.target).parent().slideUp("slow");
+    });
+});
+// Recorremos el array con for..of
+for (const producto of productos) {
+    //Por cada producto ademas de los datos agregamos un botón 
+    $("#app").append(`<div>
+                        <input value="${producto.id}" type="hidden">
+                        <h4>  Producto: ${producto.nombre}</h4>
+                        <b> $ ${producto.precio}</b>
+                        <button class="btnComprar">Comprar</button>
+                    </div>`);
+}
