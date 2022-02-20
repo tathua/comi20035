@@ -1,0 +1,500 @@
+//--------Operadores y condicionales avanzados ----------
+
+//SUGAR SYNTAX = Operadores avanzados   
+
+// ++ = x+1
+
+
+
+
+
+//OPERADOR TERNARIO = If simplificado
+//ejemplo 1
+
+let temperatura = 31
+/*
+if (temperatura > 30) {
+  alert("Día caluroso!")
+} else {
+  alert("Día agradable")
+}
+*/
+
+/*
+
+
+//es lo mismo que...
+// condicional   /     rta verdadera       / rta falsa
+temperatura > 30 ? alert("Día caluroso!") : alert("Día agradable")
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+//ejemplo 2:
+/*
+let permiso
+
+if (usuario.edad >= 18) {
+  permiso = true
+} else {
+  permiso = false
+}
+
+if (permiso) {
+  alert("Puede comprar cerveza")
+} else {
+  alert("No puede comprar")
+}
+*/
+
+
+
+/*
+//es lo mismo que... (IF...ELSE)
+const usuario = {
+    nombre: "John Doe",
+    edad: 22
+  }
+  
+  // declaramos y asignamos condicionalmente
+  const permiso = (usuario.edad >= 18) ? true : false
+  
+  // mostramos el mensaje
+  permiso ? alert("Puede comprar cerveza") : alert("No puede comprar")
+  
+  */
+
+
+
+
+
+
+
+
+
+  // OPERADOR LÓGICO AND (IF)
+//Ejemplo 1
+/*
+  const carrito = []
+
+if (carrito.length === 0 ) {
+  console.log("El carrito está vacío!")
+}
+
+
+// con operador AND
+
+
+// condición        /  rta verdadera
+carrito.length === 0 && console.log("El carrito está vacío!")
+
+*/
+
+
+
+
+
+
+
+
+
+//ejemplo 2 
+/*
+const usuario = {
+    nombre: "John Doe",
+    edad: 20
+  }
+  
+  const registroIngreso = usuario.edad >= 18 && new Date()
+  
+  console.log(registroIngreso)
+  
+*/
+
+
+
+
+
+
+
+
+//OPERADOR LÓGICO OR
+/*
+console.log( 0 || "Falsy")  // Falsy
+console.log( 40 || "Falsy")  // 40
+console.log( null || "Falsy")  // Falsy
+console.log( undefined || "Falsy")  // Falsy
+console.log( "Hola Mundo" || "Falsy")  // Hola Mundo
+console.log( "" || "Falsy")  // Falsy
+console.log( NaN || "Falsy")  // Falsy
+console.log( true || "Falsy")  // true
+console.log( false || "Falsy")  // Falsy
+*/
+
+
+
+//ejemplo1
+/*
+const usuario1 = {
+    nombre: "John Doe",
+    edad: 14
+  }
+  const usuario2 = null
+  
+  console.log( usuario1 || "El usuario no existe" )
+  // { nombre: 'John Doe', edad: 14 }
+  
+  console.log( usuario2 || "El usuario no existe" )
+  //¿Qué mensaje se mostraría?
+*/
+
+
+
+
+
+//Ejemplo 2
+/*
+let carrito
+
+let carritoLocalStorage = JSON.parse( localStorage.getItem('carrito') )
+
+if (carritoLocalStorage) {
+  carrito = carritoLocalStorage
+} else {
+  carrito = []
+}
+
+//se puede simplificar a esto..
+const carrito = JSON.parse(localStorage.getItem('carrito')) || []
+
+
+*/
+
+
+
+
+
+
+//------NULLISH COALESCING
+// ??
+/*
+console.log( 0 ?? "Nullish")  // 0
+console.log( 40 ?? "Nullish")  // 40
+console.log( null ?? "Nullish")  // Nullish
+console.log( undefined ?? "Nullish")  // Nullish
+console.log( "Hola Mundo" ?? "Nullish")  // Hola Mundo
+console.log( "" ?? "Nullish")  // ""
+console.log( NaN ?? "Nullish")  // NaN
+console.log( true ?? "Nullish")  // true
+console.log( false ?? "Nullish")  // false
+*/
+
+
+
+// ------ ACCESO CONDICIONAL A UN OBJETO
+/*
+const usuario = null
+
+console.log( usuario.nombre || "El usuario no existe" )
+// Error: "No se pueden leer propiedades de NULL"
+
+
+
+
+console.log( usuario?.nombre || "El usuario no existe")
+// "El usuario no existe"
+
+*/
+
+
+
+//Ejemplo 2
+/*
+const usuario = {
+    nombre: "John Doe",
+    edad: 22,
+    cursos: {
+      javascript: "aprobado"
+    }
+  }
+  
+  console.log( usuario?.cursos?.javascript || "La propiedad no existe")
+  // "aprobado"
+  console.log( usuario?.trabajos?.coderhouse || "La propiedad no existe")
+  // "La propiedad no existe"
+  
+*/
+  
+
+
+  //--- DESESTRUCTURACIÓN
+  /*
+  // hasta el momento haríamos esto para acceder a != objetos
+  const usuario = {
+    nombre: "John Doe",
+    edad: 32
+}
+
+let nombre = usuario.nombre
+let edad = usuario.edad
+
+// es lo mismo que hacer..
+const usuario = {
+    nombre: "John Doe",
+    edad: 32
+}
+
+const { nombre, edad } = usuario
+
+console.log(nombre) // "John Doe"
+console.log(edad) // 32
+*/
+
+
+
+
+//¿Qué pasaría si tenemos un objeto dentro de otro?
+/*
+const usuario = {
+    nombre: "John Doe",
+    edad: 32,
+    telefono: {
+        cel: 113334444,
+        casa: null,
+        trabajo: 113325555
+    }
+}
+
+//Se puede hacer igual, solo que manteniendo la jerarquía
+const { nombre, telefono: {trabajo} } = usuario
+
+console.log(nombre) // "John Doe"
+console.log(trabajo) // 113325555
+*/
+
+
+
+
+// ----- ALIAS
+/*
+const item = {
+    item_id: 432,
+    product_name: "Some product",
+    price_per_unit: 5600
+}
+
+const {
+    item_id: id,
+    product_name: nombre,
+    price_per_unit: precio
+} = item
+
+console.log(id) // 432
+console.log(nombre) // "Some product"
+console.log(precio) // 5600
+
+*/
+
+
+
+
+
+
+// ----DESESTRUCTURANDO POR PARÁMETROS
+/*
+const producto = {
+    id: 10,
+    nombre: "Curso Javascript",
+    precio: 12500
+}
+
+const desestructurar = (item) => {
+    // desestructurando dentro del bloque
+    const {id, nombre} = item
+    console.log(id, nombre)
+}
+
+desestructurar(producto) // 10 Curso Javascript
+
+//se puede resumir a...
+
+// desestructurando lo que reciba por parámetro
+const desestructurar = ( {id, nombre} ) => {
+    console.log(id, nombre)
+}
+
+desestructurar(producto) // 10 Curso Javascript
+*/
+
+ /*NO
+const nombres = ["Juan", "Julieta", "Carlos", "Mariela"]
+let primerNombre = nombres[3]
+let segundoNombre = nombres[2]
+console.log(primerNombre)
+console.log(segundoNombre)
+*/
+
+
+
+// ------ DESESTRUCTURANDO UN ARRAY
+/*
+const nombres = ["Juan", "Julieta", "Carlos", "Mariela"]
+//quedaría:         a       b          c
+const [a, b , c] = nombres
+
+console.log(a) // "Juan"
+console.log(b) // "Julieta"
+console.log(c) // "Julieta"
+*/
+
+/*
+//*En caso de querer valores de otro índices, dejar el espacio
+
+const nombres = ["Juan", "Julieta", "Carlos", "Mariela"]
+//quedaría:                             a         b
+
+// omito las dos primeras posiciones
+const [ , , a, b] = nombres
+
+console.log(a) // "Carlos"
+console.log(b) // "Mariela"
+
+*/
+
+
+
+
+
+
+
+// ------ SPREAD DE ARRAYS
+// ...
+/*
+const nombres = ["Juan", "Julieta", "Carlos", "Mariela"]
+
+// spread ... del array
+console.log(...nombres) // Juan Julieta Carlos Mariela
+
+// equivalente a:
+console.log("Juan", "Julieta", "Carlo", "Mariela")
+*/
+
+
+
+
+//Ejemplo con math.max
+//Hacer esto: 
+/*
+const numeros = [4, 77, 92, 10, 3, -32, 54, 11]
+
+console.log( Math.max(numeros) ) // NaN
+
+//No es lo mismo que...
+
+const numeros = [4, 77, 92, 10, 3, -32, 54, 11]
+
+console.log( Math.max(...numeros) ) // 92
+*/
+
+
+
+
+
+
+
+
+//SPREAD de un array hacia un objeto
+
+const nombres1 = ["Juan", "Julieta"]
+const nombres2 = ["Carlos", "Mariela"]
+
+// spread de los dos arrays dentro de otro
+const nombres = [...nombres1, ...nombres2]
+
+console.log(nombres) // ["Juan", "Julieta", "Carlos", "Mariela"]
+
+// spread del array en un objeto
+const nombresObj = {
+    ...nombres
+}
+
+console.log(nombresObj)
+// { '0': 'Juan', '1': 'Julieta', '2': 'Carlos', '3': 'Mariela' }
+
+
+
+//SPREAD de objetos (Hacerlo dentro de otro objeto)
+/*
+const usuario1 = {
+    nombre: "Juan",
+    edad: 24,
+    curso: "Javascript"
+}
+
+// lista todas las propiedades y valores de usuario1 dentro de otro objeto
+const usuario2 = {
+    ...usuario1
+}
+
+console.log(usuario2) // { nombre: 'Juan', edad: 24, curso: 'Javascript' }
+
+const usuario3 = {
+    ...usuario1,
+    curso: "ReactJS",
+    email: "juan@doe.com"
+}
+
+console.log(usuario3)
+// { nombre: 'Juan', edad: 24, curso: 'ReactJS', email: 'juan@doe.com' }
+*/
+
+
+
+
+
+
+
+
+//----- REST PARAMETERS
+
+
+
+
+function sumar(...numeros) {
+    console.log(numeros)
+}
+
+sumar(4, 2,5,4,6,6) // [ 4, 2 ]
+sumar(10, 15, 30, 5) // [ 10, 15, 30, 5 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ejemplo 2 - Sumar
+
+function sumar(...numeros) {
+    return numeros.reduce((acc, n) => acc + n, 0)
+}
+
+console.log( sumar(4, 2) ) // 6
+console.log( sumar(10, 15, 30, 5) ) // 60
+console.log( sumar(100, 300, 50) ) // 450
