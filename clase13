@@ -1,0 +1,250 @@
+// LIBRERÍA: SWEET ALERT
+/*
+Swal.fire({
+    title: 'Error!',
+    text: 'Do you want to continue?',
+    icon: 'error',
+    confirmButtonText: 'Cool'
+})
+*/
+
+
+
+
+
+
+
+/*
+const btn = document.querySelector('#myBtn')
+btn.addEventListener('click', () => {
+
+    Swal.fire({
+        title: 'Genial!',
+        text: 'Haz clickeado el botón!',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+})
+})
+
+*/
+
+
+
+
+/*
+const btn = document.querySelector('#myBtn')
+btn.addEventListener('click', () => {
+
+    Swal.fire({
+        title: 'Error!',
+        text: 'Error inesperado',
+        icon: 'error',
+        confirmButtonText: ' =( '
+    })
+})
+*/
+
+
+
+
+
+
+
+/*
+Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Your work has been saved',
+    showConfirmButton: false,
+    timer: 1500
+})
+
+*/
+
+
+
+/*
+
+Swal.fire({
+    title: 'Sweet!',
+    text: 'Modal with a custom image.',
+    imageUrl: 'https://unsplash.it/400/200',
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: 'Custom image',
+})
+
+*/
+
+
+
+//ejemplo
+/*
+const btn = document.querySelector('#myBtn')
+btn.addEventListener('click', () => {
+   
+    Swal.fire({
+        title: 'Está seguro de eliminar el producto?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, seguro',
+        cancelButtonText: 'No, no quiero'
+    }).then((result) => {
+
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'Borrado!',
+                icon: 'success',
+                text: 'El archivo ha sido borrado'
+            })
+        }
+    })
+})
+
+*/
+
+
+//LIBRERÍA: TOASTIFY
+
+
+/*
+
+const btn = document.querySelector('#myBtn')
+btn.addEventListener('click', () => {
+   
+    Toastify({
+        text: "Probando toast!",
+        duration: 3000
+    }).showToast();
+})
+*/
+/*
+const btn = document.querySelector('#myBtn')
+btn.addEventListener('click', () => {
+   
+    Toastify({
+        text: "Probando toast!",
+        duration: 3000,
+        gravity: 'bottom',
+        position: 'left'
+    }).showToast();
+})
+
+
+
+*()
+
+/*
+Toastify({
+    text: "Probando toast!",
+    duration: 3000,
+    gravity: 'bottom',
+    position: 'left',
+    style: {
+        background: 'linear-gradient(to right, #00b09b, #96c92d)'
+    }
+}).showToast();
+*/
+
+
+
+
+/*
+Toastify({
+    text: "Probando toast!",
+    duration: 3000,
+    gravity: 'bottom',
+    position: 'left',
+    className: 'notificacion my-toast'
+}).showToast();
+*/
+
+
+
+
+
+//ejemplo
+/*
+const btn = document.querySelector('#myBtn')
+btn.addEventListener('click', () => {
+   
+    Toastify({
+        text: "Probando toast!",
+        duration: 3000,
+        onClick: () => {
+           
+            Toastify({
+                text: 'Clickeaste un Toast!',
+                duration: 1500,
+                position: 'left'
+            }).showToast()
+        }
+    }).showToast();
+})
+
+*/
+
+
+
+
+//LIBRERÍA: LUXON
+
+const DateTime = luxon.DateTime
+
+
+/*
+const dt = DateTime.fromObject(
+    { day: 22, hour: 12, month: 2 },
+    { zone: 'America/Buenos_Aires', numberingSystem: 'beng' }
+ )
+
+console.log( dt.toString() )
+// 2022-02-22T12:00:00.000-03:00
+*/
+
+
+
+/*
+console.log(DateTime.fromISO("2017-05-15") )         //=> May 15, 2017 at midnight
+DateTime.fromISO("2017-05-15T08:30:00") //=> May 15, 2017 at 8:30
+
+
+
+
+const btn = document.querySelector('#myBtn')
+btn.addEventListener('click', () => {
+   
+    Toastify({
+        text: "Click aquí para ir a Coder!",
+        duration: 3000,
+        destination: 'https://www.coderhouse.com'
+    }).showToast();
+
+})
+*/
+
+//ejemplo DURATION
+/*
+const Duration = luxon.Duration
+
+const dt = DateTime.now();
+const dur = Duration.fromObject({ hours: 3, minutes: 15 });
+
+console.log( dur.hours ) // 3
+console.log( dur.minutes ) // 15
+console.log( dur.seconds ) // 0
+
+console.log( dt.toLocaleString(DateTime.DATETIME_SHORT) )
+//  25/1/2022 14:35
+
+const suma = dt.plus(dur)
+console.log(suma.toLocaleString(DateTime.DATETIME_SHORT))
+// 25/1/2022 17:50
+
+const resta = dt.minus(dur)
+console.log(resta.toLocaleString(DateTime.DATETIME_SHORT))
+// 25/1/2022 11:20
+
+*/
+
+
