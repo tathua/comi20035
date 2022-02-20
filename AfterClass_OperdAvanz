@@ -1,0 +1,174 @@
+//SPREAD: obj + curso2 + nota final
+/*
+const usuario1 = {
+    nombre: "Juan",
+    edad: 24,
+    curso: "Javascript"
+}
+
+
+
+const usuario2 = {
+    ...usuario1,
+    curso2: "React js",
+    notaFinal: 7
+    
+}
+
+console.log(usuario2)
+
+*/
+
+
+
+
+
+
+
+
+
+
+//SPREAD: Un array dentro de otro
+/*
+const nombres1 = ["Juan", "Julieta"]
+const nombres2 = ["Carlos", "Mariela"]
+
+
+const nombresgral = ["pepe", "Marta" , "Julian", ...nombres1, ...nombres2]
+console.log(nombresgral)
+
+*/
+
+
+
+
+
+
+
+
+
+//Desestructurar un array
+const nombres = ["Juan", "Julieta", "Carlos", "Mariela"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+//sumar indices 4, 6 8, usando operadores avanzados. Mostrar resultado con swwetalert
+const numeros = [4, 77, 92, 10, 3, -32, 54, 11]
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+//Desestructurar y crear un arrray
+const producto = {
+    id: 1,
+    art: "arroz",
+    precio: 130,
+    descripcion: "largo fino"
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Resolver con Op. Av.
+//PARTE 1
+/*Sabiendo que los hombres se jubilan a los 65 años, y las mujeres a los 60, crear un bucle
+que permita revisar a todos los usuarios interesados en jubilarse, les consulte la edad
+y les indique si se pueden jubilar. En caso de no ser así, indicarles cuantos años le faltan*/
+
+const nombre = document.getElementById("nombre").value
+const edad = document.getElementById("edad").value
+const genero = document.getElementById("genero").value
+
+
+
+const btn = document.getElementById("ingresar")
+btn.addEventListener("click", revisarGenero)
+
+function revisarGenero(){
+    genero.value == "F" ? femenino() :  masculino()
+}
+
+function femenino(){
+    edad >= 60 ? console.log("Se puede jubilar") : console.log("No se puede jubilar, te faltan " + (60 - edad) + " años")
+}
+function masculino(){
+    edad >= 65 ? console.log("Se puede jubilar") : console.log("No se puede jubilar, te faltan " + (65 - edad) + " años")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//PARTE 2
+/*Guardar en un array todas las solicitudes y luego generar un promedio de las edades que consultaron*/
